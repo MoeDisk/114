@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<!-- 本地磁盘姬 作品 -->
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" name="viewport" content="width=device-width, initial-scale=0.5, minimum-scale=1.0, maximum-scale=4.0"/></meta>
+		<title>MDWGv1</title>
+		
+		
+		<link type="text/css" rel="stylesheet" href="css/live2d.css"/>
+		<link type="text/css" rel="stylesheet" href="css/searchbox.css"/>
+		<link type="text/css" rel="stylesheet" href="css/toolsbg.css"/>
+		<link type="text/css" rel="stylesheet" href="css/css.css"/>
+        <link type="text/css" rel="stylesheet" href="css/jquery.tool.css"/>
+        <link type="text/css" rel="stylesheet" href="css/smartMenu.css"/>
+        <script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
+        <script type="text/javascript" src="js/jquery.tool.js"></script>
+        <script type="text/javascript" src="js/shortcut.js"></script>
+        <script type="text/javascript" src="js/templates.js"></script>
+        <script type="text/javascript" src="js/jquery-smartMenu.js"></script>
+        <script type="text/javascript" src="js/core.js"></script>
+        <script type="text/javascript">
+            $().ready(function(){
+                document.body.onselectstart = document.body.ondrag = function(){return false;}
+                Core.init();
+            });
+		</script>
+	</head>
+	
+	<body>
+		<div class="container">
+			<div id="search">
+			<form id="form1" name="form1" method="get" action="http://www.baidu.com/s" target="_blank"><label>
+			<input type="text" name="wd" id="wd" autocomplete="off" autofocus="autofocus" placeholder="搜索,从此开始.."></label>
+			<input class="button" type="submit" value="Search" >
+			</div>
+		</div>
+		
+		<div class="toolsbg">
+			<div id="weather"><iframe width="280" scrolling="no" height="25" frameborder="0" allowtransparency="true" src="http://i.tianqi.com/index.php?c=code&id=34&icon=1&num=3"></iframe></div>
+			<div id="eninfo">
+				<script type="text/javascript">
+					document.write("<p>浏览器：")
+					document.write(navigator.appName + "</p>")
+					document.write("<p>浏览器版本：")
+					document.write(navigator.appVersion + "</p>")
+					document.write("<p>代码：")
+					document.write(navigator.appCodeName + "</p>")
+					document.write("<p>平台：")
+					document.write(navigator.platform + "</p>")
+					document.write("<p>Cookies 启用：")
+					document.write(navigator.cookieEnabled + "</p>")
+				</script>
+			</div>
+			<br />
+			<script language="javaScript"> 
+			now = new Date(),hour = now.getHours() 
+			if(hour < 6){document.write("(/≧▽≦/)凌晨好！")} 
+			else if (hour < 9){document.write(" (/≧▽≦/)早上好w！")} 
+			else if (hour < 12){document.write("(/≧▽≦/)上午好w！")} 
+			else if (hour < 14){document.write("(/≧▽≦/)中午好w！")} 
+			else if (hour < 17){document.write("(/≧▽≦/)下午好w！")} 
+			else if (hour < 19){document.write("(/≧▽≦/)傍晚好w！")} 
+			else if (hour < 22){document.write("(/≧▽≦/)晚上好w！")} 
+			else {document.write("(/≧▽≦/)夜里好w！")} 
+			</script>
+			<br />
+			Version:1.00a - Build:180414 - ≧本地磁盘姬 作品
+			<br />
+			Copyright © - AimoCamerata, Keep Part Copyright.
+			<br />
+			!使用此作品代码时请务必备注此作品作者信息!ありがとう、
+			<br />
+			!使用此作品代码时请务必备注此作品作者信息!ありがとう、
+			<br />
+			!使用此作品代码时请务必备注此作品作者信息!ありがとう、
+		</div>
+
+		<!-- lxcn -->
+		<body id="lxcn"  repeat right bottom transparent;">
+        <div id="task-bar">
+            <ul class="task-window">                
+            </ul>
+        </div>
+        <div id="desk"><ul></ul></div>
+		</body>
+		
+		<!-- live2dbg -->
+		<div><canvas id="glcanvas" width="750%" height="750%"></canvas></div>
+		<!-- Live2D Library -->
+        <script src="lib/live2d.min.js"></script>
+        <!-- Live2D Framework -->
+        <script src="src/Live2DFramework.js"></script>
+        <script src="src/MatrixStack.js"></script>
+        <script src="src/ModelSettingJson.js"></script>
+        <script src="src/PlatformManager.js"></script>
+        <script src="src/LAppDefine.js"></script>
+        <script src="src/LAppModel.js"></script>
+        <script src="src/LAppLive2DManager.js"></script>
+        <script src="src/Live2DHelper.js"></script>
+		<!-- User's Script -->
+		<script type="text/javascript">
+            var live2DHelper = new Live2DHelper({canvas: 'glcanvas'});
+
+            window.onload = function() {
+                var path = "assets/models/asuna/asuna_01.model.json";
+                live2DHelper.loadModel(path, function(){
+                    live2DHelper.startTurnHead();
+                    document.getElementById("glcanvas").addEventListener("mousemove", followPointer, false);
+                });
+            };
+		
+			function followPointer(e) {
+                live2DHelper.followPointer(e);
+            }
+		</script>
+		<!-- BDSHARE -->
+		<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"5","bdPos":"right","bdTop":"0"},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+	</body>
+</html>
